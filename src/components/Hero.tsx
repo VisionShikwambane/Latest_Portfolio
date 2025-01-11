@@ -5,37 +5,39 @@ export default function Hero() {
   const cursorRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const textArray = ["Frontend Developer", "UI/UX Designer", "Problem Solver"];
+    const textArray = ["Full Stack Developer", "UI/UX Designer", "Problem Solver"];
     let textArrayIndex = 0;
     let charIndex = 0;
-    
-    function type() {
-      if (!typedTextRef.current || !cursorRef.current) return;
-      
-      if (charIndex < textArray[textArrayIndex].length) {
-        typedTextRef.current.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, 100);
-      } else {
-        setTimeout(erase, 2000);
-      }
-    }
+    let isErasing = false;
 
-    function erase() {
-      if (!typedTextRef.current || !cursorRef.current) return;
-      
-      if (charIndex > 0) {
-        typedTextRef.current.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+    function updateText() {
+      if (!typedTextRef.current) return;
+
+      if (isErasing) {
+        // Erase characters
         charIndex--;
-        setTimeout(erase, 50);
+        typedTextRef.current.textContent = textArray[textArrayIndex].substring(0, charIndex);
+        if (charIndex === 0) {
+          isErasing = false;
+          textArrayIndex = (textArrayIndex + 1) % textArray.length;
+          setTimeout(updateText, 500); // Pause before typing the next word
+        } else {
+          setTimeout(updateText, 50); // Speed for erasing
+        }
       } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, 500);
+        // Type characters
+        charIndex++;
+        typedTextRef.current.textContent = textArray[textArrayIndex].substring(0, charIndex);
+        if (charIndex === textArray[textArrayIndex].length) {
+          isErasing = true;
+          setTimeout(updateText, 2000); // Pause before erasing
+        } else {
+          setTimeout(updateText, 100); // Speed for typing
+        }
       }
     }
 
-    setTimeout(type, 1000);
+    setTimeout(updateText, 1000); // Initial delay before typing starts
   }, []);
 
   return (
@@ -51,7 +53,7 @@ export default function Hero() {
           />
           
           <h1 className="text-4xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">
-            John Doe
+           Shikwambane Vision
           </h1>
           
           <div className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8">
