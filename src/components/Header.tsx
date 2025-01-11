@@ -41,7 +41,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <a href="#home" className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-            Portfolio
+            Vision Shikwambane
           </a>
 
           {/* Desktop Navigation */}
@@ -66,18 +66,18 @@ export default function Header() {
               </button>
               
               <div className="flex space-x-4">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                <a href="https://github.com/VisionShikwambane" target="_blank" rel="noopener noreferrer" 
                    className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                   <Github className="w-5 h-5" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.linkedin.com/in/vision-shikwambane/" target="_blank" rel="noopener noreferrer"
                    className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
                    className="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                   <Twitter className="w-5 h-5" />
-                </a>
+                </a> */}
               </div>
             </div>
           </nav>

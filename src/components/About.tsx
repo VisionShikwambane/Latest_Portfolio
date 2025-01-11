@@ -2,33 +2,32 @@ import React from 'react';
 import { BookOpen, Briefcase } from 'lucide-react';
 
 const timelineData = [
+  // {
+  //   year: '2021',
+  //   title: 'Frontend Developer',
+  //   company: 'StartUp Inc',
+  //   type: 'work',
+  //   description: 'Developed modern web applications using React',
+  // },
   {
-    year: '2023',
-    title: 'Senior Frontend Developer',
-    company: 'Tech Corp',
+    year: 'Aug 2024 - Present',
+    title: 'Junior Software Developer',
+    company: 'CCG Systems',
     type: 'work',
-    description: 'Led frontend development for enterprise applications',
+    description: 'Assisted in developing and maintaining ERP modules with Angular, .NET, and SQL, collaborated with senior developers on debugging and code reviews, and worked with cross-functional teams to gather requirements and deliver solutions.',
   },
   {
-    year: '2021',
-    title: 'Frontend Developer',
-    company: 'StartUp Inc',
+    year: 'Feb 2024 - Jul 2024 ',
+    title: 'Software Developer Trainee',
+    company: 'CCG Systems',
     type: 'work',
-    description: 'Developed modern web applications using React',
+    description: 'Assisted in ERP development using Angular, .NET, and SQL, collaborated on debugging, code reviews, and requirement gathering with cross-functional teams.',
   },
   {
-    year: '2020',
-    title: 'MSc in Computer Science',
-    company: 'Tech University',
+    year: 'Jan 2023 - Nov 2023',
+    title: 'Full Stack Software Developer Intern',
     type: 'education',
-    description: 'Specialized in Web Technologies',
-  },
-  {
-    year: '2018',
-    title: 'Junior Developer',
-    company: 'Digital Agency',
-    type: 'work',
-    description: 'Started career in web development',
+    description: 'Developed an Electronic Document Management System (EDMS) using ASP.NET CORE 6, Angular, Microsoft SQL and Azure',
   },
 ];
 
