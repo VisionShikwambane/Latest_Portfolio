@@ -47,7 +47,7 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 relative z-10">
         <div className="text-center">
           <img
-            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200"
+            src="src\images\1715545135237.jpg"
             alt="Profile"
             className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-white shadow-lg"
           />
@@ -62,7 +62,7 @@ export default function Hero() {
           </div>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-12">
-            Building modern digital experiences with a passion for clean code and pixel-perfect design.
+           Building modern digital experiences with a passion for clean code, efficient solutions, and flawless design execution.
           </p>
           
           <div className="flex justify-center space-x-4">

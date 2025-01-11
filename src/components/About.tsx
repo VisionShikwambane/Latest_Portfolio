@@ -43,12 +43,10 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              I'm a passionate frontend developer with 5+ years of experience in building modern web applications. 
-              I specialize in React and love creating beautiful, responsive user interfaces.
+            I’m a passionate full-stack software developer with experience in building scalable web applications and delivering efficient software solutions. I specialize in designing and implementing various solutions that improve business processes and enhance user experiences.
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              My journey in web development started with a curiosity about how websites work, 
-              and it has evolved into a career where I get to build amazing digital experiences every day.
+            My journey in software development began with a fascination for technology and problem-solving, and it has grown into a career where I get to create and innovate every day. I thrive in Agile environments, continuously learning and applying best practices to build real-world, production-ready applications. I’m also interested in emerging trends and opportunities in the tech industry.
             </p>
             <div className="flex space-x-4">
               <button className="px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
