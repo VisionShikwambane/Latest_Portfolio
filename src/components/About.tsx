@@ -32,6 +32,17 @@ const timelineData = [
 ];
 
 export default function About() {
+
+  const handleDownloadCV = () => {
+   
+    const link = document.createElement('a');
+    link.href = 'src/cv/Vision_ShikwambaneCV.pdf'; 
+    link.download = 'VisionShikwambane.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +60,7 @@ export default function About() {
             My journey in software development began with a fascination for technology and problem-solving, and it has grown into a career where I get to create and innovate every day. I thrive in Agile environments, continuously learning and applying best practices to build real-world, production-ready applications. I’m also interested in emerging trends and opportunities in the tech industry.
             </p>
             <div className="flex space-x-4">
-              <button className="px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
+              <button  onClick={handleDownloadCV} className="px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors">
                 Download CV
               </button>
             </div>
