@@ -7,11 +7,41 @@ export default function Contact() {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically integrate with a form service like Formspree
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xdkaaolq', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitSuccess(false), 5000); // Hide success message after 5 seconds
+    } catch (error) {
+      setSubmitError('There was an error submitting your message. Please try again.');
+      setTimeout(() => setSubmitError(null), 5000); // Hide error message after 5 seconds
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -81,6 +111,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -96,6 +127,7 @@ export default function Contact() {
                 onChange={handleChange}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 required
+                disabled={isSubmitting}
               />
             </div>
 
@@ -111,15 +143,31 @@ export default function Contact() {
                 rows={4}
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
                 required
+                disabled={isSubmitting}
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-            >
-              Send Message
-            </button>
+            <div className="space-y-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+
+              {submitSuccess && (
+                <div className="p-4 bg-green-100 text-green-700 rounded-lg dark:bg-green-900 dark:text-green-200">
+                  Message sent successfully!
+                </div>
+              )}
+
+              {submitError && (
+                <div className="p-4 bg-red-100 text-red-700 rounded-lg dark:bg-red-900 dark:text-red-200">
+                  {submitError}
+                </div>
+              )}
+            </div>
           </form>
         </div>
       </div>
