@@ -11,3 +11,726 @@
     @apply text-gray-900 dark:text-white;
   }
 }
+
+
+/* Add these to your global CSS file */
+
+/* Cursor blinking animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+/* Floating animations with different speeds and delays */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 12s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Slow pulse animation */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.2; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s infinite;
+}
+
+/* Fade in animations with different delays */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s forwards;
+}
+
+.animate-fade-in-delay-1 {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 0.3s;
+}
+
+.animate-fade-in-delay-2 {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 0.6s;
+}
+
+.animate-fade-in-delay-3 {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 0.9s;
+}
+
+.animate-fade-in-delay-4 {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 1.2s;
+}
+
+.animate-fade-in-delay-5 {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 1.5s;
+}
+
+.animate-fade-in-delay-6 {
+  opacity: 0;
+  animation: fade-in 1s forwards;
+  animation-delay: 1.8s;
+}
+
+/* Slide up entrance animation */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s forwards;
+}
+
+/* Very slow spinning animation */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Text shadow utility */
+.shadow-text {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Scroll down animation for mouse wheel */
+@keyframes scroll-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.animate-scroll-down {
+  animation: scroll-down 1.5s ease-in-out infinite;
+}
+
+/* Add these amazing animations to your global CSS */
+
+/* Glassmorphism effect */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+}
+
+
+
+.dark .glassmorphism {
+  background: rgba(30, 30, 46, 0.85);
+  border: 1px solid rgba(56, 56, 76, 0.5);
+}
+
+/* Neon shadow for buttons */
+.hover\:shadow-neon:hover {
+  box-shadow: 0 0 20px 2px rgba(139, 92, 246, 0.6);
+}
+
+/* Pattern backgrounds */
+.pattern-dots {
+  background-image: radial-gradient(currentColor 1px, transparent 1px);
+}
+
+.pattern-size-4 {
+  background-size: 40px 40px;
+}
+
+/* Text reveal animations */
+.text-reveal-container {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: text-reveal 0.8s forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Title reveal animation */
+@keyframes title-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotateX(20deg);
+    transform-origin: top;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    transform-origin: top;
+  }
+}
+
+.animate-title-reveal {
+  animation: title-reveal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Timeline animations */
+.timeline-year, .timeline-title, .timeline-company, .timeline-description {
+  opacity: 0;
+  animation: slide-left 0.5s forwards;
+}
+
+.timeline-title { animation-delay: 0.1s; }
+.timeline-company { animation-delay: 0.2s; }
+.timeline-description { animation-delay: 0.3s; }
+
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Ping animations for timeline nodes */
+@keyframes ping-outer {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes ping-inner {
+  0%, 100% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+}
+
+.animate-ping-outer {
+  animation: ping-outer 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-ping-inner {
+  animation: ping-inner 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Timeline track pulse animation */
+@keyframes timeline-pulse {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px 1px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 15px 3px rgba(139, 92, 246, 0.6);
+  }
+}
+
+.animate-timeline-pulse {
+  animation: timeline-pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animated tag reveal */
+@keyframes tag-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tag-reveal {
+  opacity: 0;
+  animation: tag-reveal 0.5s ease forwards;
+}
+
+/* Text highlight animation */
+@keyframes highlight-text {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.animate-highlight-text {
+  animation: highlight-text 1.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  animation-delay: 1.2s;
+  transform-origin: left;
+}
+
+/* Gradient movement animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.animate-float {
+  animation: float 14s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 18s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Spinning animations */
+@keyframes spin-extra-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-extra-slow {
+  animation: spin-extra-slow 30s linear infinite;
+}
+
+@keyframes reverse-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-reverse-spin-slow {
+  animation: reverse-spin-slow 35s linear infinite;
+}
+
+/* Bounce slow */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0) rotate(45deg); }
+  50% { transform: translateY(-15px) rotate(45deg); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 10s infinite;
+}
+
+/* Basic slide up and fade in animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fade-in-delay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-delay {
+  opacity: 0;
+  animation: fade-in-delay 0.8s forwards;
+  animation-delay: 0.4s;
+}
+
+/* Perspective for 3D effects */
+.perspective {
+  perspective: 2000px;
+}
+
+/* Add these styles to your global CSS file for absolutely mind-blowing effects */
+
+/* 3D Card Styles with Neomorphism */
+.neo-card {
+  background: white;
+  box-shadow: 
+    20px 20px 60px rgba(0, 0, 0, 0.05), 
+    -20px -20px 60px rgba(255, 255, 255, 0.8);
+}
+
+.dark .neo-card {
+  background: #1f2937;
+  box-shadow: 
+    5px 5px 20px rgba(0, 0, 0, 0.3), 
+    -5px -5px 20px rgba(255, 255, 255, 0.05);
+}
+
+/* Glowing shadow effect */
+.shadow-glow {
+  box-shadow: 
+    0 10px 25px -5px rgba(124, 58, 237, 0.3),
+    0 5px 15px -10px rgba(139, 92, 246, 0.5);
+}
+
+/* Negative Z for overlapping elements */
+.-translate-z-2 {
+  transform: translateZ(-2px);
+}
+
+/* Grid background patterns */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(200, 200, 250, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 200, 250, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.dark .bg-grid-dark {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Perspective container for 3D effects */
+.perspective {
+  perspective: 2000px;
+}
+
+/* Text gradient effect */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-purple-500.to-indigo-500 {
+  --tw-gradient-from: #8b5cf6;
+  --tw-gradient-to: #6366f1;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+/* Skill progress bar effects */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) skewX(30deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(30deg);
+  }
+}
+
+.animate-shine {
+  animation: shine 2.5s ease-in-out infinite;
+}
+
+.skew-x-30deg {
+  transform: skewX(30deg);
+}
+
+/* Bubble animations for high-level skills */
+@keyframes bubble-1 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+  50% { transform: translateY(-8px) scale(1.2); opacity: 0.7; }
+}
+
+@keyframes bubble-2 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  60% { transform: translateY(-10px) scale(1.1); opacity: 0.6; }
+}
+
+@keyframes bubble-3 {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.2; }
+  70% { transform: translateY(-6px) scale(0.9); opacity: 0.5; }
+}
+
+.animate-bubble-1 {
+  animation: bubble-1 3s ease-in-out infinite;
+}
+
+.animate-bubble-2 {
+  animation: bubble-2 2.7s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+.animate-bubble-3 {
+  animation: bubble-3 2.5s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+/* Fast pulse animation for active skills */
+@keyframes pulse-fast {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-pulse-fast {
+  animation: pulse-fast 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Floating animations for background blobs */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+.animate-float {
+  animation: float 14s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 18s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Glitch text effect for section title */
+.glitch-text {
+  position: relative;
+  color: transparent;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.glitch-text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.glitch-text span:first-child {
+  animation: glitch 2.5s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  opacity: 0.8;
+}
+
+.glitch-text span:last-child {
+  animation: glitch 2s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+  transform: translate(0.025em, 0.025em);
+  opacity: 0.8;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* Add these effects to your global CSS file */
+
+/* Grid background pattern */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
+/* Floating animations for background orbs */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 18s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Extremely large blur for background elements */
+.blur-3xl {
+  --tw-blur: blur(5rem);
+  filter: var(--tw-blur);
+}
+
+/* Hover underline animation effect */
+.bg-left-bottom {
+  background-position: left bottom;
+}
+
+
+
+.hover\:bg-[length\:100\%_2px]:hover {
+  background-size: 100% 2px;
+}
+
+/* Button hover animations */
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: var(--tw-transform);
+}
+
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: var(--tw-transform);
+}
+
+/* Chevron animation */
+.hover\:translate-x-1:hover {
+  --tw-translate-x: 0.25rem;
+  transform: var(--tw-transform);
+}
+
+/* Make the carousel responsive */
+@media (min-width: 768px) {
+  .md\:h-64 {
+    height: 16rem;
+  }
+}
+
+/* Smooth image transitions */
+.transition-transform {
+  transition-property: transform;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Hover effects for cards and buttons */
+.hover\:-translate-y-2:hover {
+  --tw-translate-y: -0.5rem;
+  transform: var(--tw-transform);
+}
+
+/* Helper classes for transforms */
+.transform-gpu {
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  backface-visibility: hidden;
+}
+
+/* Shadow effects */
+.hover\:shadow-xl:hover {
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-purple-500\/20 {
+  --tw-shadow-color: rgba(168, 85, 247, 0.2);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
