@@ -67,7 +67,7 @@ const projects = [
   },
 ];
 
-const categories = ['All', 'Web App', 'UI Design', 'Data Viz'];
+const categories = ['All'];
 
 /* ------------------------------
    Utilities / Helpers
@@ -231,7 +231,7 @@ const ProjectImageCarousel = ({ images, autoplay = true }) => {
             }}
             style={{
               position: 'absolute',
-              left: -60,
+              left: -1,
               top: '50%',
               transform: 'translateY(-50%)',
               width: 50,
@@ -255,7 +255,7 @@ const ProjectImageCarousel = ({ images, autoplay = true }) => {
             }}
             style={{
               position: 'absolute',
-              right: -60,
+              right: -1,
               top: '50%',
               transform: 'translateY(-50%)',
               width: 50,
