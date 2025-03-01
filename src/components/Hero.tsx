@@ -119,7 +119,7 @@ export default function Hero() {
             <div className="absolute inset-0 -m-4 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 rounded-full filter blur opacity-40 group-hover:opacity-70 transition-all duration-1000 animate-spin-slow"></div>
             <div className="absolute inset-0 -m-1 bg-white dark:bg-gray-800 rounded-full"></div>
             <img
-              src="dist/assets/1715545135237.jpg"
+              src="1715545135237.jpg"
               alt="Profile"
               className="w-36 h-36 rounded-full relative z-10 transition-transform duration-700 transform group-hover:scale-105 border-4 border-white dark:border-gray-800 shadow-xl"
             />
