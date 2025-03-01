@@ -86,7 +86,7 @@ export default function About() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = 'src/cv/Vision_ShikwambaneCV.pdf'; 
+    link.href = 'src/assets/Vision_ShikwambaneCV.pdf'; 
     link.download = 'VisionShikwambane.pdf';
     document.body.appendChild(link);
     link.click();
