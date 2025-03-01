@@ -23,48 +23,48 @@ const projects = [
    
   },
   
-  {
-    title: 'Task Management App',
-    description: 'A beautiful and intuitive task management application',
-    images: [
-      'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    ],
-    category: 'Web App',
-    technologies: ['React', 'Firebase', 'Tailwind CSS'],
-    github: 'https://github.com',
+  // {
+  //   title: 'Task Management App',
+  //   description: 'A beautiful and intuitive task management application',
+  //   images: [
+  //     'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+  //   ],
+  //   category: 'Web App',
+  //   technologies: ['React', 'Firebase', 'Tailwind CSS'],
+  //   github: 'https://github.com',
    
-  },
-  {
-    title: 'Portfolio Website',
-    description: 'A modern portfolio website with dark mode support',
-    images: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    ],
-    category: 'UI Design',
-    technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-    github: 'https://github.com',
+  // },
+  // {
+  //   title: 'Portfolio Website',
+  //   description: 'A modern portfolio website with dark mode support',
+  //   images: [
+  //     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+  //   ],
+  //   category: 'UI Design',
+  //   technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
+  //   github: 'https://github.com',
    
-  },
-  {
-    title: 'Weather Dashboard',
-    description: 'A weather dashboard with beautiful visualizations',
-    images: [
-      'https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1530563885674-66db50a1af19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1598965914211-6ee311be1d6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-    ],
-    category: 'Data Viz',
-    technologies: ['React', 'D3.js', 'OpenWeather API'],
-    github: 'https://github.com',
+  // },
+  // {
+  //   title: 'Weather Dashboard',
+  //   description: 'A weather dashboard with beautiful visualizations',
+  //   images: [
+  //     'https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1530563885674-66db50a1af19?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1534088568595-a066f410bcda?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+  //     'https://images.unsplash.com/photo-1598965914211-6ee311be1d6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+  //   ],
+  //   category: 'Data Viz',
+  //   technologies: ['React', 'D3.js', 'OpenWeather API'],
+  //   github: 'https://github.com',
     
-  },
+  // },
 ];
 
 const categories = ['All'];
