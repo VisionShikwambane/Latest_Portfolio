@@ -26,9 +26,17 @@ const timelineData = [
   {
     year: 'Jan 2023 - Nov 2023',
     title: 'Full Stack Software Developer Intern',
+    company: 'DALRRD',
     type: 'education',
     description: 'Developed an Electronic Document Management System (EDMS) using ASP.NET CORE 6, Angular, Microsoft SQL and Azure',
   },
+  {
+    year: '2020 - 2023',
+    title: 'Bcom Informatics: Information Systems',
+    company: 'University of pretoria',
+    type: 'education',
+    description: 'Graduated with a deggree, specializing in software development and system analysis. Completed coursework in algorithms, database systems, and web development.',
+  }
 ];
 
 export default function About() {
@@ -152,9 +160,9 @@ export default function About() {
                   <div className="text-reveal-container">
                     <p className="text-2xl text-gray-800 dark:text-gray-200 mb-6 leading-relaxed">
                       I'm a <span className="font-bold text-purple-600 dark:text-purple-400 relative">
-                        passionate full-stack developer
+                        passionate tech enthusiast
                         <span className="absolute bottom-0 left-0 w-full h-1 bg-purple-600 dark:bg-purple-400 transform scale-x-0 animate-highlight-text"></span>
-                      </span> building scalable web applications and efficient software solutions.
+                      </span> building scalable applications and efficient software solutions.
                     </p>
                   </div>
                   

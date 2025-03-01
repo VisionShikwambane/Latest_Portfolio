@@ -3,28 +3,47 @@ import { Code, Database, Palette, Terminal, Zap, Star, ChevronRight, ExternalLin
 
 const skills = {
   frontend: [
-    { name: 'React', level: 90 },
     { name: 'Angular', level: 95 },
-    { name: 'TypeScript', level: 85 },
-    { name: 'CSS/SASS', level: 90 },
+    { name: 'JavaScript', level: 95 },
+    { name: 'CSS/SASS', level: 95 },
     { name: 'Tailwind CSS', level: 95 },
+    { name: 'TypeScript', level: 95 }, 
+    { name: 'HTML5', level: 95 }, 
+    { name: 'Ionic', level: 85 }, 
+    { name: 'Bootstrap', level: 85 },
+    { name: 'React', level: 75 }, 
+    { name: 'JQuery', level: 75 },
   ],
   backend: [
-    { name: 'Node.js', level: 80 },
-    { name: 'ASP.NET', level: 96 },
+    { name: 'C# ASP.NET Core', level: 96 },
+    { name: 'C# ASP.NET Framework', level: 96 },
+    { name: 'Node.js', level: 70 },
     { name: 'REST APIs', level: 95 },
+    { name: 'Python', level: 65 }, 
+    { name: 'Java', level: 65 }, 
+    { name: 'Firebase', level: 60 }, 
+
   ],
   tools: [
     { name: 'Git', level: 90 },
     { name: 'Azure DevOps', level: 75 },
     { name: 'MS Office', level: 70 },
-    // { name: 'Jest', level: 80 },
+    { name: 'Jira', level: 80 }, // Project management tool
+    { name: 'Figma', level: 70 }, // For UI/UX design and prototyping
+    { name: 'Docker', level: 65 }, // For containerizing applications
+   
   ],
   soft: [
     { name: 'Microsoft SQL Server (MSSQL)', level: 95 },
-    { name: 'MySql', level: 90 },
+    { name: 'MySQL', level: 95 },
+    { name: 'SQLite', level: 70 }, // Lightweight, serverless SQL database
+    { name: 'MongoDB', level: 65 }, // NoSQL database
+    { name: 'PostgreSQL', level: 60 }, // Relational database management system
+    { name: 'GraphQL', level: 55 }, // Data query language for APIs (also works with databases)
+    
   ],
 };
+
 
 // Star rating based on skill level
 const SkillStars = ({ level }) => {
