@@ -138,10 +138,10 @@ export default function About() {
             {/* 3D Floating Card with Tilt */}
             <div 
               className="relative rounded-3xl transform-gpu transition-transform duration-300 ease-out" 
-              style={{
-                transform: mousePos.x ? `rotateY(${(mousePos.x / 500 - 0.5) * 10}deg) rotateX(${(mousePos.y / 300 - 0.5) * -10}deg)` : 'none',
-                transformStyle: 'preserve-3d'
-              }}
+              // style={{
+              //   transform: mousePos.x ? `rotateY(${(mousePos.x / 500 - 0.5) * 10}deg) rotateX(${(mousePos.y / 300 - 0.5) * -10}deg)` : 'none',
+              //   transformStyle: 'preserve-3d'
+              // }}
             >
               {/* Glass effect card */}
               <div className="glassmorphism p-8 rounded-3xl relative z-10 transform">
