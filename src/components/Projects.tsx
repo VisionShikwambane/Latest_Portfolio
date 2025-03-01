@@ -1,24 +1,28 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Github, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import ReactDOM from 'react-dom';
 
 /* ------------------------------
    Example Project Data 
 ------------------------------ */
 const projects = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce platform built with React and Node.js',
+    title: 'Automated Invoicing Solution',
+    description: 'A streamlined invoicing solution built with Angular and ASP.NET Core that automates billing, tracks payments, and sends timely reminders for efficient financial management.',
     images: [
-      'https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1472851294608-062f824d29cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-      'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+      'https://i.pinimg.com/736x/ed/76/23/ed76238ff16477fd927dcc34ce86f2cb.jpg',
+      'https://i.pinimg.com/736x/97/ce/a3/97cea352d8072d1132dcc5bca153f7b5.jpg',
+      'https://i.pinimg.com/736x/23/f5/5c/23f55cb313686e25c487b598dccf2f0a.jpg',
+      'https://i.pinimg.com/736x/72/3c/77/723c77e31142092da0232839332687c2.jpg',
+      'https://i.pinimg.com/736x/dc/bb/15/dcbb15d63342b1a0f54940fc25c04f20.jpg',
+      'https://i.pinimg.com/736x/b9/77/6d/b9776d5282d60165b975b07fa347755e.jpg'
     ],
     category: 'Web App',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    github: 'https://github.com',
-    live: 'https://example.com',
+    technologies: ['Angular', 'Tailwind', 'ASP.NET Core Web API', 'MySQL','Amazon SES'],
+    github: 'https://github.com/VisionShikwambane/InvoiceFlow.git',
+   
   },
+  
   {
     title: 'Task Management App',
     description: 'A beautiful and intuitive task management application',
@@ -31,7 +35,7 @@ const projects = [
     category: 'Web App',
     technologies: ['React', 'Firebase', 'Tailwind CSS'],
     github: 'https://github.com',
-    live: 'https://example.com',
+   
   },
   {
     title: 'Portfolio Website',
@@ -45,7 +49,7 @@ const projects = [
     category: 'UI Design',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
     github: 'https://github.com',
-    live: 'https://example.com',
+   
   },
   {
     title: 'Weather Dashboard',
@@ -59,7 +63,7 @@ const projects = [
     category: 'Data Viz',
     technologies: ['React', 'D3.js', 'OpenWeather API'],
     github: 'https://github.com',
-    live: 'https://example.com',
+    
   },
 ];
 
@@ -91,132 +95,280 @@ function createAnimatedText(text) {
 /* ------------------------------
    Image Carousel Component 
 ------------------------------ */
+
+
 const ProjectImageCarousel = ({ images, autoplay = true }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const intervalRef = useRef(null);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    if (autoplay) {
-      intervalRef.current = setInterval(() => {
-        nextSlide();
+    let interval;
+    if (autoplay && !isExpanded) {
+      interval = setInterval(() => {
+        setCurrentIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
       }, 3000);
     }
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [currentIndex, autoplay]);
+    return () => clearInterval(interval);
+  }, [autoplay, images.length, isExpanded]);
 
-  const resetInterval = () => {
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current);
-      if (autoplay) {
-        intervalRef.current = setInterval(() => {
-          nextSlide();
-        }, 3000);
-      }
+  // Handle keyboard for modal
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isExpanded) setIsExpanded(false);
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') nextSlide();
+    };
+
+    if (isExpanded) {
+      window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
     }
-  };
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isExpanded]);
 
   const prevSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-    setTimeout(() => setIsTransitioning(false), 500);
-    resetInterval();
+    setCurrentIndex(prev => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    );
-    setTimeout(() => setIsTransitioning(false), 500);
-    resetInterval();
+    setCurrentIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  // Swipe support
-  const handleTouchStart = (e) => setTouchStart(e.targetTouches[0].clientX);
-  const handleTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
-  const handleTouchEnd = () => {
-    if (touchStart - touchEnd > 50) nextSlide();
-    if (touchStart - touchEnd < -50) prevSlide();
+  const ExpandedView = () => {
+    const modalContainer = document.createElement('div');
+  
+    useEffect(() => {
+      document.body.appendChild(modalContainer);
+      return () => document.body.removeChild(modalContainer);
+    }, []);
+  
+    return ReactDOM.createPortal(
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.9)',
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+        onClick={() => setIsExpanded(false)}
+      >
+        <div 
+          onClick={e => e.stopPropagation()} 
+          style={{ position: 'relative', maxWidth: '90vw', maxHeight: '90vh' }}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setIsExpanded(false)}
+            style={{
+              position: 'absolute',
+              right: 10,
+              top: 10,
+              zIndex: 10,
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: 'none',
+              cursor: 'pointer',
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          
+          {/* Carousel container with transition */}
+          <div
+            className="flex transition-transform duration-500"  // <- Using Tailwind
+            style={{
+              width: `${images.length * 100}%`,
+              transform: `translateX(-${(100 / images.length) * currentIndex}%)`,
+            }}
+          >
+            {images.map((image, index) => (
+              <div 
+                key={index} 
+                style={{ 
+                  width: `${100 / images.length}%`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 20
+                }}
+              >
+                <img
+                  src={image}
+                  alt={`Expanded view ${index + 1}`}
+                  style={{ 
+                    maxWidth: '100%',
+                    maxHeight: '80vh',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+          
+          {/* Navigation arrows */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevSlide();
+            }}
+            style={{
+              position: 'absolute',
+              left: -60,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: 50,
+              height: 50,
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            <ChevronLeft size={24} />
+          </button>
+          
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextSlide();
+            }}
+            style={{
+              position: 'absolute',
+              right: -60,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: 50,
+              height: 50,
+              borderRadius: '50%',
+              backgroundColor: 'rgba(255, 255, 255, 0.8)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            <ChevronRight size={24} />
+          </button>
+          
+          {/* Image counter */}
+          <div style={{
+            position: 'absolute',
+            bottom: -40,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            color: 'white',
+            padding: '5px 15px',
+            borderRadius: 20,
+            fontSize: 14
+          }}>
+            {currentIndex + 1} / {images.length}
+          </div>
+        </div>
+      </div>,
+      modalContainer
+    );
   };
+  
 
   return (
     <div className="relative overflow-hidden rounded-t-xl h-60 md:h-64 group">
-      {/* Images container */}
+      {/* Image carousel */}
       <div
-        className="h-full w-full flex transition-transform duration-500 ease-out"
+        className="h-full w-full flex transition-transform duration-500"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         {images.map((image, index) => (
           <div key={index} className="h-full min-w-full relative">
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              className="w-full h-full object-cover cursor-pointer group-hover:scale-105 transition-transform duration-300"
+              onClick={() => setIsExpanded(true)}
             />
-            {/* Slide counter overlay */}
-            <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+            <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
               {index + 1}/{images.length}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Navigation Arrows - visible on hover */}
+      {/* Hover overlay */}
+      <div 
+        className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center cursor-pointer"
+        onClick={() => setIsExpanded(true)}
+      >
+        <div className="bg-white bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 px-3 py-2 rounded-lg text-gray-800 dark:text-gray-200 font-medium opacity-0 group-hover:opacity-100 transform scale-90 group-hover:scale-100 transition-all duration-300">
+          Click to expand
+        </div>
+      </div>
+
+      {/* Navigation buttons */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 hidden group-hover:flex items-center justify-center
-                   bg-white bg-opacity-80 dark:bg-gray-800 dark:bg-opacity-80 backdrop-blur-sm
-                   rounded-full shadow-lg text-gray-800 dark:text-gray-200
-                   hover:scale-110 transition-transform duration-300"
-        aria-label="Previous image"
+        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 hidden group-hover:flex items-center justify-center bg-white bg-opacity-80 rounded-full shadow-lg"
       >
         <ChevronLeft size={18} />
       </button>
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 hidden group-hover:flex items-center justify-center
-                   bg-white bg-opacity-80 dark:bg-gray-800 dark:bg-opacity-80 backdrop-blur-sm
-                   rounded-full shadow-lg text-gray-800 dark:text-gray-200
-                   hover:scale-110 transition-transform duration-300"
-        aria-label="Next image"
+        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 hidden group-hover:flex items-center justify-center bg-white bg-opacity-80 rounded-full shadow-lg"
       >
         <ChevronRight size={18} />
       </button>
 
-      {/* Dot Indicators */}
+      {/* Dots */}
       <div className="absolute bottom-3 left-0 right-0 flex justify-center space-x-2">
         {images.map((_, index) => (
           <button
             key={index}
-            onClick={() => {
-              setCurrentIndex(index);
-              resetInterval();
-            }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              currentIndex === index
-                ? 'bg-white w-4'
-                : 'bg-white bg-opacity-50 hover:bg-opacity-80'
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              currentIndex === index ? 'bg-white w-4' : 'bg-white bg-opacity-50'
             }`}
-            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
+
+      {/* Expanded view portal */}
+      {isExpanded && <ExpandedView />}
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
 
 /* ------------------------------
    Main Projects Section 
@@ -408,7 +560,7 @@ export default function Projects() {
                       >
                         <Github size={16} />
                       </a>
-                      <a
+                      {/* <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -416,7 +568,7 @@ export default function Projects() {
                         aria-label="View live project"
                       >
                         <ExternalLink size={16} />
-                      </a>
+                      </a> */}
                     </div>
                   </div>
 
@@ -444,11 +596,11 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-purple-600 dark:text-purple-300 font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
                   >
-                    <span>View Project</span>
+                    {/* <span>View Project</span>
                     <ChevronRight
                       size={16}
                       className="ml-1 transform hover:translate-x-1 transition-transform duration-200"
-                    />
+                    /> */}
                   </a>
                 </div>
               </div>
