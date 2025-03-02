@@ -32,7 +32,7 @@ export default function Hero() {
     
     // Typing animation
     const textArray = [
-      "Full Stack Developer", 
+      "Full Stack Software Developer", 
       "Problem Solver", 
       "Creative Thinker",
       "Tech Enthusiast",
