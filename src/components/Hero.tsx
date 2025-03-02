@@ -164,7 +164,7 @@ export default function Hero() {
               <span className="absolute top-0 left-0 w-full h-full bg-white opacity-0 transition-opacity duration-500 group-hover:opacity-10"></span>
               <span className="absolute -inset-0 w-10 h-full transform rotate-12 translate-x-10 bg-white opacity-10 group-hover:translate-x-[30rem] transition-transform duration-1000"></span>
               <span className="relative flex items-center justify-center text-white font-medium">
-                <span>View My Work</span>
+                <span>View My Projects</span>
                 <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>

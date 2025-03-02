@@ -39,20 +39,20 @@ const projects = [
     github: 'https://github.com/VisionShikwambane/CV_Optimiser.git',
    
   },
-  // {
-  //   title: 'Portfolio Website',
-  //   description: 'A modern portfolio website with dark mode support',
-  //   images: [
-  //     'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  //     'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  //     'https://images.unsplash.com/photo-1545239351-ef35f43d514b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  //     'https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-  //   ],
-  //   category: 'UI Design',
-  //   technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-  //   github: 'https://github.com',
+  {
+    title: 'Car Business Website',
+    description: 'A sleek car business portfolio website with dark mode, built with Angular, Tailwind CSS, ASP.NET Core, Amazon SE, and MySQL. Ideal for showcasing services or products. ',
+    images: [
+      'https://i.pinimg.com/736x/30/22/77/302277021cb19a50f05c91babf25c93b.jpg',
+      'https://i.pinimg.com/736x/30/22/77/302277021cb19a50f05c91babf25c93b.jpg',
+      'https://i.pinimg.com/736x/2e/04/14/2e04149dd67b3d3128df29760dae849f.jpg',
+      'https://i.pinimg.com/736x/2e/04/14/2e04149dd67b3d3128df29760dae849f.jpg'
+    ],
+    category: 'UI Design',
+    technologies: ['Angular', 'Tailwind CSS', 'ASP.NET Core', 'Amazon SE', 'MySQL'],
+    github: 'https://github.com/VisionShikwambane/IC-Cars.git',
    
-  // },
+  },
   // {
   //   title: 'Weather Dashboard',
   //   description: 'A weather dashboard with beautiful visualizations',
