@@ -23,20 +23,20 @@ const projects = [
    
   },
   
-  // {
-  //   title: 'Task Management App',
-  //   description: 'A beautiful and intuitive task management application',
-  //   images: [
-  //     'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  //     'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  //     'https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
-  //     'https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
-  //   ],
-  //   category: 'Web App',
-  //   technologies: ['React', 'Firebase', 'Tailwind CSS'],
-  //   github: 'https://github.com',
+  {
+    title: 'AI CV Optimization tool',
+    description: 'AI-powered CV optimization tool that enhances your resume with personalized suggestions, ATS compatibility, and keyword analysis to boost job opportunities.',
+    images: [
+      'https://i.pinimg.com/736x/86/94/29/869429642319d5b2f10d3110af4d7c86.jpg',
+      'https://i.pinimg.com/736x/13/01/ab/1301abd29b1cda7b3efdb43a95fcb238.jpg',
+      'https://i.pinimg.com/736x/9a/3b/bd/9a3bbd2e29a590a7286401603c5b94e8.jpg',
+      'https://i.pinimg.com/736x/9a/3b/bd/9a3bbd2e29a590a7286401603c5b94e8.jpg'
+    ],
+    category: 'Web App',
+    technologies: ['React', 'Node js', 'Open AI'],
+    github: 'https://github.com/VisionShikwambane/CV_Optimiser.git',
    
-  // },
+  },
   // {
   //   title: 'Portfolio Website',
   //   description: 'A modern portfolio website with dark mode support',
