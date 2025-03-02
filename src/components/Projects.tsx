@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 const projects = [
   {
     title: 'Automated Invoicing Solution',
+    live: '',
     description: 'A streamlined invoicing solution built with Angular and ASP.NET Core that automates billing, tracks payments, and sends timely reminders for efficient financial management.',
     images: [
       'https://i.pinimg.com/736x/ed/76/23/ed76238ff16477fd927dcc34ce86f2cb.jpg',
@@ -25,6 +26,7 @@ const projects = [
   
   {
     title: 'AI CV Optimization tool',
+    live: 'cv-optimize.netlify.app',
     description: 'AI-powered CV optimization tool that enhances your resume with personalized suggestions, ATS compatibility, and keyword analysis to boost job opportunities.',
     images: [
       'https://i.pinimg.com/736x/86/94/29/869429642319d5b2f10d3110af4d7c86.jpg',
@@ -560,15 +562,6 @@ export default function Projects() {
                       >
                         <Github size={16} />
                       </a>
-                      {/* <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 rounded-full bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 shadow-sm transition-colors"
-                        aria-label="View live project"
-                      >
-                        <ExternalLink size={16} />
-                      </a> */}
                     </div>
                   </div>
 
@@ -588,20 +581,24 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+                  {project.live && project.live !== '' && (
+  <a
+    href={`https://${project.live}`} // Prepend "https://" if only the domain is provided
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center text-purple-600 dark:text-purple-300 font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+  >
+    <span>View Live Project</span>
+    <ChevronRight
+      size={16}
+      className="ml-1 transform hover:translate-x-1 transition-transform duration-200"
+    />
+  </a>
+)}
 
-                  {/* View Project Link */}
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-purple-600 dark:text-purple-300 font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    {/* <span>View Project</span>
-                    <ChevronRight
-                      size={16}
-                      className="ml-1 transform hover:translate-x-1 transition-transform duration-200"
-                    /> */}
-                  </a>
+
+
+
                 </div>
               </div>
             </div>
